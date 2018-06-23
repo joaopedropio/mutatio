@@ -1,0 +1,6 @@
+packages
+.vs
+Mutatio/bin
+Mutatio/obj
+Mutatio.Tests/bin
+Mutatio.Tests/obj

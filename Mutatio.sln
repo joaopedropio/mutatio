@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mutatio", "Mutatio\Mutatio.csproj", "{24B68C60-29C2-404E-83D1-6E13A5937061}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mutatio.Tests", "Mutatio.Tests\Mutatio.Tests.csproj", "{57D0E222-B010-4725-A06E-E34437B6E4F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24B68C60-29C2-404E-83D1-6E13A5937061}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24B68C60-29C2-404E-83D1-6E13A5937061}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24B68C60-29C2-404E-83D1-6E13A5937061}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24B68C60-29C2-404E-83D1-6E13A5937061}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57D0E222-B010-4725-A06E-E34437B6E4F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57D0E222-B010-4725-A06E-E34437B6E4F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57D0E222-B010-4725-A06E-E34437B6E4F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57D0E222-B010-4725-A06E-E34437B6E4F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F771AE91-1AC2-46FB-BE95-33C73192976C}
+	EndGlobalSection
+EndGlobal
