@@ -1,6 +1,6 @@
-﻿namespace Mutatio.BaseLog
+﻿namespace Registrum.BaseLog
 {
-    public class HttpLogEntry : IHttpLogEntry
+    internal class HttpLogEntry : IHttpLogEntry
     {
         public string Provider { get; set; }
         public string HttpMethod { get; set; }

@@ -1,6 +1,6 @@
-﻿namespace Mutatio.BaseLog
+﻿namespace Registrum.BaseLog
 {
-    public interface IHttpLogEntry
+    internal interface IHttpLogEntry
     {
         string Provider { get; set; }
         string HttpMethod { get; set; }

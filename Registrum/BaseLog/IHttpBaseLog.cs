@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
 
-namespace Mutatio.BaseLog
+namespace Registrum.BaseLog
 {
-    public interface IHttpBaseLog
+    internal interface IHttpBaseLog
     {
         List<IHttpLogEntry> LogEntries { get; set; }
-
-        IHttpBaseLog ToHttpBaseLog();
     }
 }

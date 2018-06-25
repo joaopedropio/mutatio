@@ -2,5 +2,10 @@ packages
 .vs
 Mutatio/bin
 Mutatio/obj
+Mutatio/*.user
 Mutatio.Tests/bin
 Mutatio.Tests/obj
+Registrum.Tests/bin
+Registrum.Tests/obj
+Registrum/bin
+Registrum/obj

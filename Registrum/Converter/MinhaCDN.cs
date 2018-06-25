@@ -1,21 +1,14 @@
-﻿using System;
+﻿using Registrum.BaseLog;
+using System;
 using System.Collections.Generic;
-using Mutatio.BaseLog;
 
-namespace Mutatio.Logs
+namespace Registrum.Converter
 {
-    class MinhaCDNLog : HttpBaseLog, IFormatedLog 
+    internal static class MinhaCDN
     {
-        public string FormatedLog { get; set; }
-
-        public MinhaCDNLog(string formatedLog)
+        internal static IHttpBaseLog ToHttpBaseLog(string log)
         {
-            this.FormatedLog = formatedLog;
-        }
-
-        public override IHttpBaseLog ToHttpBaseLog()
-        {
-            var lines = this.FormatedLog.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+            var lines = log.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
 
             var logEntries = new List<IHttpLogEntry>();
 
@@ -36,6 +29,11 @@ namespace Mutatio.Logs
             }
 
             return new HttpBaseLog(logEntries);
+        }
+
+        internal static string HttpBaseToMinhaCDN(IHttpBaseLog log)
+        {
+            throw new NotImplementedException();
         }
     }
 }
