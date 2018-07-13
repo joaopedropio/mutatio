@@ -1,11 +1,23 @@
 ﻿using Registrum.BaseLog;
 using System;
 
-namespace Registrum.Converter
+namespace Registrum.Logs
 {
-    internal static class Agora
+    internal class Agora : ILog
     {
-        internal static string HttpBaseToAgoraLog(IHttpBaseLog httpBaseLog)
+        public string Content { get; set; }
+
+        public Agora(string log)
+        {
+            this.Content = log;
+        }
+
+        public Agora(IHttpBaseLog httpBaseLog)
+        {
+            this.Content = FromHttpBaseLog(httpBaseLog);
+        }
+
+        public string FromHttpBaseLog(IHttpBaseLog httpBaseLog)
         {
             var metadata = string.Format(@"# Version: 1.0
 # Date: {0} {1}
@@ -27,9 +39,9 @@ namespace Registrum.Converter
             return metadata + body;
         }
 
-        internal static IHttpBaseLog ToHttpBaseLog(string log)
+        public IHttpBaseLog ToHttpBaseLog()
         {
-            return ToHttpBaseLog(log);
+            throw new NotImplementedException();
         }
     }
 }

@@ -2,13 +2,22 @@
 using System;
 using System.Collections.Generic;
 
-namespace Registrum.Converter
+namespace Registrum.Logs
 {
-    internal static class MinhaCDN
+    internal class MinhaCDN : ILog
     {
-        internal static IHttpBaseLog ToHttpBaseLog(string log)
+        public string Content { get; set; }
+        public MinhaCDN(string log)
         {
-            var lines = log.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+            this.Content = log;
+        }
+        public MinhaCDN(IHttpBaseLog httpBaseLog)
+        {
+            this.Content = FromHttpBaseLog(httpBaseLog);
+        }
+        public IHttpBaseLog ToHttpBaseLog()
+        {
+            var lines = this.Content.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
 
             var logEntries = new List<IHttpLogEntry>();
 
@@ -31,7 +40,7 @@ namespace Registrum.Converter
             return new HttpBaseLog(logEntries);
         }
 
-        internal static string HttpBaseToMinhaCDN(IHttpBaseLog log)
+        public string FromHttpBaseLog(IHttpBaseLog log)
         {
             throw new NotImplementedException();
         }

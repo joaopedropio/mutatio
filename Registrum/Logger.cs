@@ -1,10 +1,10 @@
 ﻿using Registrum.BaseLog;
-using Registrum.Converter;
+using Registrum.Logs;
 using System;
 
 namespace Registrum
 {
-    public static class Log
+    public static class Logger
     {
         public static string Conversion(string file, LogFormatEnum inputType, LogFormatEnum outputType)
         {
@@ -18,9 +18,9 @@ namespace Registrum
             switch (inputType)
             {
                 case LogFormatEnum.MinhaCDN:
-                    return MinhaCDN.ToHttpBaseLog(log);
+                    return new MinhaCDN(log).ToHttpBaseLog();
                 case LogFormatEnum.Agora:
-                    return Agora.ToHttpBaseLog(log);
+                    return new Agora(log).ToHttpBaseLog();
                 default:
                     throw new NotImplementedException();
             }
@@ -31,9 +31,9 @@ namespace Registrum
             switch (inputType)
             {
                 case LogFormatEnum.MinhaCDN:
-                    return MinhaCDN.HttpBaseToMinhaCDN(log);
+                    return new MinhaCDN(log).Content;
                 case LogFormatEnum.Agora:
-                    return Agora.HttpBaseToAgoraLog(log);
+                    return new Agora(log).Content;
                 default:
                     throw new NotImplementedException();
             }

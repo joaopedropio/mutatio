@@ -26,7 +26,7 @@ namespace Registrum.Tests
         public void FromMinhaCDNToAgoraLog()
         {
             var log = agoraLog;
-            var result = Log.Conversion(minhaCDNLog, LogFormatEnum.MinhaCDN, LogFormatEnum.Agora);
+            var result = Logger.Conversion(minhaCDNLog, LogFormatEnum.MinhaCDN, LogFormatEnum.Agora);
 
             log = removeDateLineFromAgoraLog(log);
             result = removeDateLineFromAgoraLog(result);
@@ -38,7 +38,7 @@ namespace Registrum.Tests
         public void FromAgoraToMinhaCDNLog()
         {
             var log = agoraLog;
-            var result = Log.Conversion(minhaCDNLog, LogFormatEnum.Agora, LogFormatEnum.MinhaCDN);
+            var result = Logger.Conversion(minhaCDNLog, LogFormatEnum.Agora, LogFormatEnum.MinhaCDN);
 
             log = removeDateLineFromAgoraLog(log);
             result = removeDateLineFromAgoraLog(result);

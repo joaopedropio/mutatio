@@ -2,6 +2,7 @@ packages
 .vs
 Mutatio/bin
 Mutatio/obj
+Mutatio/out
 Mutatio/*.user
 Mutatio.Tests/bin
 Mutatio.Tests/obj

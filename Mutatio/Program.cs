@@ -1,22 +1,26 @@
-﻿using System.Threading.Tasks;
-using Mutatio;
+﻿using Registrum;
+using static System.Console;
 
-namespace Registrum
+namespace Mutatio
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            Task.Run(() => Execute(args[0], args[1], LogFormatEnum.MinhaCDN, LogFormatEnum.Agora));
+            Execute(args[0], args[1], LogFormatEnum.MinhaCDN, LogFormatEnum.Agora);
+            WriteLine("Done!");
         }
 
-        private static async Task Execute(string url, string filePath, LogFormatEnum inputType, LogFormatEnum outputType)
+        private static void Execute(string url, string filePath, LogFormatEnum inputType, LogFormatEnum outputType)
         {
-            var file = await Client.GetFile(url);
+            WriteLine($"Downloading file from {url}");
+            var file = Client.GetFile(url);
 
-            var log = Log.Conversion(file, inputType, outputType);
+            WriteLine($"Converting log from {inputType.ToString()} to {outputType.ToString()}");
+            var log = Logger.Conversion(file, inputType, outputType);
 
-            await Archive.SaveLogFile(filePath, log);
+            WriteLine($"Saving log to {filePath}");
+            Archive.SaveLogFile(filePath, log);
         }
     }
 }
